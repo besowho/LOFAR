@@ -12,6 +12,9 @@ import java.awt.*;
  *
  * @author juan
  */
+
+
+
 public class Lofar extends JComponent {
 
     int sizeCanalX = 0;
@@ -27,13 +30,18 @@ public class Lofar extends JComponent {
     //String hw="ESPERANDO... un hola";
 
     public static void main(String[] args) {
-        JFrame window = new JFrame("LOFAR by SIVISO");
+        JFrame window = new JFrame();
+        window.setUndecorated(true);
+        window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         Lofar lf = new Lofar();
-        window.add(lf);
-        window.pack();
-        window.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         window.setLocationRelativeTo(null);
         window.setVisible(true);
+        window.add(lf);
+        window.pack();
+        
+        LofarGetPropertyValues propiedades = new LofarGetPropertyValues();
+		propiedades.getPropValues();
+		
         //despliegue d = new despliegue();
         //d.run();
         comInterfaz c = new comInterfaz();
@@ -44,7 +52,7 @@ public class Lofar extends JComponent {
 
     @Override
     public Dimension getPreferredSize() {
-        return new Dimension(400, 500);
+        return new Dimension(481, 481);
     }
 
     @Override
